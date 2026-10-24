@@ -624,6 +624,43 @@ div[data-baseweb="select"] > div {
     font-family: 'Space Mono', 'JetBrains Mono', monospace !important;
 }
 
+div[data-testid="stTextInput"],
+div[data-testid="stTextArea"] {
+    margin-bottom: 0.9rem !important;
+}
+
+div[data-testid="stTextInput"] > div,
+div[data-testid="stTextArea"] > div {
+    background: #F7F3E7 !important;
+    border: 2.5px solid #111111 !important;
+    border-radius: 10px !important;
+    box-shadow: 4px 4px 0 #111111 !important;
+    overflow: hidden !important;
+}
+
+div[data-testid="stTextInput"] input,
+div[data-testid="stTextArea"] textarea {
+    padding: 0.7rem 0.9rem !important;
+    min-height: 52px !important;
+    font-size: 0.9rem !important;
+}
+
+div[data-testid="stTextInput"] button,
+div[data-testid="stTextArea"] button,
+button[title*="Show"],
+button[title*="Hide"],
+button[data-testid="baseButton-secondary"],
+button[data-testid="stBaseButton-secondary"] {
+    background: #B7E4C7 !important;
+    border: 2px solid #111111 !important;
+    border-radius: 6px !important;
+    color: #111111 !important;
+    box-shadow: 2px 2px 0 #111111 !important;
+    font-family: 'Space Grotesk', sans-serif !important;
+    font-weight: 700 !important;
+    padding: 0.3rem 0.6rem !important;
+}
+
 div[data-baseweb="input"]:focus-within,
 div[data-baseweb="textarea"]:focus-within,
 div[data-testid="stTextArea"] textarea:focus,

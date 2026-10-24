@@ -4,8 +4,8 @@ import sqlite3
 import tempfile
 import time
 
-import crypto_core as cc
-import storage
+from . import aes_gcm as cc
+from . import storage
 
 
 def _rejected(func) -> bool:
@@ -70,6 +70,7 @@ def run_all():
     return results
 
 
+# Jalankan: python -m modules.selftest
 if __name__ == "__main__":
     for r in run_all():
         print(f"{r['Hasil']:6} {r['Pengujian']:32} {r['Keterangan']}")

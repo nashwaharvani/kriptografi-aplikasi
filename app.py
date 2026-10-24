@@ -2,13 +2,18 @@
 import time
 from datetime import datetime, timedelta, timezone
 
+from pathlib import Path
+
 import streamlit as st
 
-import crypto_core as cc
-import selftest
-import storage
+import tema
+from modules import aes_gcm as cc
+from modules import selftest, storage
 
 st.set_page_config(page_title="EmberNote", page_icon="🔥", layout="centered")
+tema.apply_theme()
+
+LOGO = Path(__file__).parent / "images" / "logo.png"
 
 MAX_CHARS = 5000
 DURATIONS = {"5 menit": 300, "1 jam": 3600, "24 jam": 86400, "7 hari": 604800}
@@ -154,13 +159,29 @@ def page_about():
 *Proyek pembelajaran kriptografi, bukan alat keamanan untuk produksi.*
         """
     )
+    with st.expander("⚠️ Batasan & ancaman yang tidak ditangani"):
+        st.markdown(
+            """
+- **Bukan E2EE murni**: kunci dibuat dan dipakai di server saat pesan dibuat/dibuka.
+- Siapa pun yang memegang **ID + kunci** dapat membuka pesan, jadi kirim keduanya lewat jalur berbeda.
+- **Panjang pesan, ID, dan waktu** tidak tersembunyi.
+- Tidak ada pembatasan spam/percobaan (menebak kunci 256-bit tetap mustahil).
+- Penyimpanan Streamlit Cloud bersifat sementara.
+- Plaintext tetap ada di sesi browser sampai pesan ditutup.
+- Belum diaudit pihak independen.
+            """
+        )
 
 
 if "page" not in st.session_state:
     st.session_state.page = PAGES[1] if "id" in st.query_params else PAGES[0]
 
-st.sidebar.title("🔥 EmberNote")
+if LOGO.exists():
+    st.sidebar.image(str(LOGO), width=96)
+st.sidebar.title("EmberNote")
 choice = st.sidebar.radio("Menu", PAGES, key="page")
 st.sidebar.caption("AES-256-GCM • Pesan sekali baca")
 
+tema.hero("EmberNote", "Pesan rahasia sekali baca, dilindungi satu algoritma.",
+          ("AES-256-GCM", "Sekali baca", "AAD"))
 {PAGES[0]: page_create, PAGES[1]: page_read, PAGES[2]: page_proof, PAGES[3]: page_about}[choice]()

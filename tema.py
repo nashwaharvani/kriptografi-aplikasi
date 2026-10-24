@@ -755,6 +755,30 @@ div[data-testid="stExpander"] summary {
     color: #111111 !important;
     padding: 0.75rem 1rem !important;
 }
+div[data-testid="stExpanderContent"] {
+    background: #F3F7F2 !important;
+    padding: 0.75rem 1rem 1rem !important;
+    border-top: 2px solid #111111 !important;
+}
+
+div[data-testid="stJson"] {
+    background: #FFFFFF !important;
+    border: 2px solid #111111 !important;
+    border-radius: 8px !important;
+    box-shadow: 3px 3px 0 #111111 !important;
+    padding: 0.75rem 0.9rem !important;
+    overflow: hidden !important;
+}
+div[data-testid="stJson"] pre,
+div[data-testid="stJson"] code {
+    font-family: 'Space Mono', 'JetBrains Mono', monospace !important;
+    font-size: 0.8rem !important;
+    line-height: 1.5 !important;
+    color: #111111 !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    margin: 0 !important;
+}
 
 /* Alerts / Banners (st.success, st.error, st.info, st.warning) */
 div[data-testid="stAlert"] {

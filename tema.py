@@ -690,11 +690,50 @@ div[data-testid="stFormSubmitButton"] > button:hover {
 
 /* Code block (st.code) Neo-brutalist */
 div[data-testid="stCodeBlock"] {
+    position: relative !important;
     border: 2.5px solid #111111 !important;
     border-radius: 8px !important;
     box-shadow: 3px 3px 0 #111111 !important;
     background-color: #FFFFFF !important;
     margin-bottom: 0.75rem !important;
+    overflow: hidden !important;
+}
+
+div[data-testid="stCodeBlock"] pre {
+    background: transparent !important;
+    color: #111111 !important;
+    font-family: 'Space Mono', 'JetBrains Mono', monospace !important;
+    font-size: 0.82rem !important;
+    line-height: 1.55 !important;
+    white-space: pre-wrap !important;
+    word-break: break-word !important;
+    margin: 0 !important;
+    padding: 0.9rem 1rem !important;
+}
+
+div[data-testid="stCodeBlock"] button,
+div[data-testid="stCodeBlock"] > button,
+div[data-testid="stCodeBlock"] button[title*="Copy"] {
+    position: absolute !important;
+    top: 8px !important;
+    right: 8px !important;
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px !important;
+    min-height: 26px !important;
+    padding: 0 !important;
+    border: 2px solid #111111 !important;
+    border-radius: 50% !important;
+    background: #7DD3FC !important;
+    color: #111111 !important;
+    box-shadow: 2px 2px 0 #111111 !important;
+    opacity: 1 !important;
+}
+
+div[data-testid="stCodeBlock"] button:hover,
+div[data-testid="stCodeBlock"] > button:hover {
+    transform: translate(1px, 1px) !important;
+    box-shadow: 1px 1px 0 #111111 !important;
 }
 
 /* Expander styling */

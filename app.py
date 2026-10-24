@@ -235,6 +235,4 @@ tema.sidebar_brand()
 choice = st.sidebar.radio("Menu", PAGES, key="page")
 tema.sidebar_footer()
 
-tema.top_bar()
-
 {PAGES[0]: page_create, PAGES[1]: page_read, PAGES[2]: page_proof, PAGES[3]: page_about}[choice]()

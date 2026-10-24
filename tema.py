@@ -176,63 +176,6 @@ label[data-testid="stRadioOption"][data-selected="true"] div[data-testid="stMark
     text-align: center;
 }
 
-/* Top Nav / Breadcrumbs Bar */
-.en-topbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: #FFFDF7;
-    border: 2.5px solid #111111;
-    border-radius: 8px;
-    padding: 10px 16px;
-    box-shadow: 4px 4px 0 #111111;
-    margin-bottom: 1.5rem;
-    width: 100%;
-}
-.en-topbar-left {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-.en-topbar-pill {
-    background: #FFFFFF;
-    border: 2px solid #111111;
-    border-radius: 6px;
-    padding: 4px 10px;
-    font-size: 0.82rem;
-    font-weight: 700;
-    box-shadow: 2px 2px 0 #111111;
-}
-.en-topbar-right {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-.en-topbar-search {
-    background: #FFFFFF;
-    border: 2px solid #111111;
-    border-radius: 6px;
-    padding: 6px 14px;
-    font-size: 0.82rem;
-    color: #666666;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    box-shadow: 2px 2px 0 #111111;
-}
-.en-topbar-icon-btn {
-    width: 32px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: #FFFFFF;
-    border: 2px solid #111111;
-    border-radius: 6px;
-    box-shadow: 2px 2px 0 #111111;
-    font-size: 0.9rem;
-}
-
 /* Page Header Title */
 .en-page-title-wrap {
     margin-bottom: 1.25rem;
@@ -812,29 +755,6 @@ def sidebar_footer() -> None:
         """
         <div class="en-sidebar-footer">
             AES-256-GCM • Pesan sekali baca
-        </div>
-        """,
-        unsafe_allow_html=True,
-    )
-
-
-def top_bar() -> None:
-    """Tampilkan bilah atas bergaya dashboard JEDI dengan status security."""
-    st.markdown(
-        """
-        <div class="en-topbar">
-            <div class="en-topbar-left">
-                <span class="en-topbar-pill">🔒 AES-256-GCM</span>
-                <span class="en-topbar-pill">⚡ CSPRNG</span>
-            </div>
-            <div class="en-topbar-right">
-                <div class="en-topbar-search">
-                    <span>🔍</span>
-                    <span>Cari pesan, ID, verifikasi...</span>
-                </div>
-                <div class="en-topbar-icon-btn">🔔</div>
-                <div class="en-topbar-icon-btn">🛡️</div>
-            </div>
         </div>
         """,
         unsafe_allow_html=True,
